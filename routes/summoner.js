@@ -30,10 +30,14 @@ const kayn = Kayn(riotApiKey)({
   }
 });
 
-kayn.Summoner.by
-  .name("KσsmοS")
-  .then(summoner => console.log(summoner))
-  .catch(error => console.error(error));
+router.get("/", (req, res, next) => {
+  // const { summonerName } = req.body;
+  // console.log(summonerName);
+  // kayn.Summoner.by
+  //   .name("KσsmοS")
+  //   .then(summoner => console.log(summoner))
+  //   .catch(error => console.error(error));
+});
 
 /* GET home page */
 // router.get("/", (req, res, next) => {

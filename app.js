@@ -3,8 +3,8 @@ require("dotenv").config();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
-const favicon = require("serve-favicon");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const logger = require("morgan");
 const path = require("path");
 
@@ -33,18 +33,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, "public")));
-app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
 app.use(
   cors({
     // receive cookies from other domains/origins
     credentials: true,
     // only these domains/origins can access the API
-    origin: ["http://localhost:3000"]
+    origin: [process.env.FRONT_URL]
   })
 );
 
 const auth = require("./routes/summoner.js");
-app.use("/api", auth);
+app.use("/", auth);
+
+const champions = require("./routes/championsList.js");
+app.use("/", champions);
 
 module.exports = app;
