@@ -29,7 +29,7 @@ const app = express();
 // Middleware Setup
 app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -43,8 +43,8 @@ app.use(
   })
 );
 
-const auth = require("./routes/summoner.js");
-app.use("/", auth);
+const summoner = require("./routes/summoner.js");
+app.use("/", summoner);
 
 const champions = require("./routes/championsList.js");
 app.use("/", champions);
