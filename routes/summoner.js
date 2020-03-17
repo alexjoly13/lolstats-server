@@ -34,37 +34,44 @@ router.post("/summoner", (req, res, next) => {
   const summonerNameSearch = req.body;
   let summId;
   const matches = [];
+  const finalInfos = [];
 
-  kayn.Summoner.by
-    .name(Object.keys(summonerNameSearch))
-    .then(summoner => {
-      summId = summoner.accountId;
-      console.log(summId);
-      kayn.Matchlist.by
-        .accountID(summId)
-        .query({
-          endIndex: 20
-        })
-        .then(matchlist => {
-          matchlist.matches.map(oneMatch => {
-            matches.push(oneMatch.gameId);
-          });
-          console.log(matches);
+  let infoRequest = async () => {
+    await kayn.Summoner.by
+      .name(Object.keys(summonerNameSearch))
+      .then(summoner => {
+        finalInfos.push(summoner);
+        summId = summoner.accountId;
+        kayn.Matchlist.by
+          .accountID(summId)
+          .query({
+            endIndex: 5
+          })
+          .then(matchlist => {
+            matchlist.matches.map(oneMatch => {
+              matches.push(oneMatch.gameId);
+            });
 
-          const matchIndex = matches.map(oneQuery => {
-            return kayn.Match.get(oneQuery);
-          });
+            const matchIndex = matches.map(oneQuery => {
+              return kayn.Match.get(oneQuery);
+            });
 
-          Promise.all(matchIndex)
-            .then(resultArray => {
-              console.log(resultArray);
-            })
-            .catch(error => console.error(error));
-        })
-        .catch(error => console.error(error));
-      res.json(summoner);
-    })
-    .catch(error => console.error(error));
+            Promise.all(matchIndex)
+              .then(resultArray => {
+                console.log(resultArray);
+                finalInfos.push(resultArray);
+              })
+              .catch(error => console.error(error));
+          })
+          .catch(error => console.error(error));
+
+        setTimeout(function() {
+          res.json(finalInfos);
+        }, 9000);
+      })
+      .catch(error => console.error(error));
+  };
+  infoRequest();
 });
 
 module.exports = router;
