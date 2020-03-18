@@ -58,7 +58,6 @@ router.post("/summoner", (req, res, next) => {
 
             Promise.all(matchIndex)
               .then(resultArray => {
-                console.log(resultArray);
                 finalInfos.push(resultArray);
               })
               .catch(error => console.error(error));
