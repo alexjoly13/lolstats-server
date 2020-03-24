@@ -32,13 +32,14 @@ const kayn = Kayn(riotApiKey)({
 
 router.post("/summoner", (req, res, next) => {
   const summonerNameSearch = req.body;
+  let easier = Object.keys(summonerNameSearch);
   let summId;
   const matches = [];
   const finalInfos = [];
 
   let infoRequest = async () => {
     await kayn.Summoner.by
-      .name(Object.keys(summonerNameSearch))
+      .name(easier)
       .then(summoner => {
         finalInfos.push(summoner);
         summId = summoner.accountId;
@@ -58,7 +59,57 @@ router.post("/summoner", (req, res, next) => {
 
             Promise.all(matchIndex)
               .then(resultArray => {
-                finalInfos.push(resultArray);
+                const a = [];
+                const b = [];
+                let showcasedSummId = [];
+                let showcasedSummoner = [];
+                resultArray.map(oneGame => {
+                  a.push(oneGame.participantIdentities);
+                  b.push(oneGame.participants);
+                });
+                a.map(oneParticipant => {
+                  oneParticipant.map(blah => {
+                    if (
+                      blah.player.summonerName.toLowerCase() ===
+                      easier.toString()
+                    ) {
+                      showcasedSummId.push(blah.participantId);
+                    } else {
+                      return;
+                    }
+                  });
+                });
+
+                b.map(onePlayer => {
+                  onePlayer.map((touche, index) => {
+                    if (touche.participantId === showcasedSummId[index]) {
+                      showcasedSummoner.push(touche);
+                    } else {
+                      return;
+                    }
+                  });
+                });
+
+                function filtrerParID(obj) {
+                  // Si c'est un nombre
+                  if (
+                    obj.participantId !== undefined &&
+                    typeof obj.participantId === "number" &&
+                    obj.participantId === 9
+                  ) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                }
+
+                const taupe = b.map(oneClick => {
+                  return oneClick.filter(filtrerParID);
+                });
+
+                console.log(taupe);
+
+                finalInfos.push(resultArray, showcasedSummoner);
               })
               .catch(error => console.error(error));
           })
