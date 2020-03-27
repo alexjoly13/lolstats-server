@@ -32,17 +32,27 @@ const kayn = Kayn(riotApiKey)({
 
 router.post("/summoner", (req, res, next) => {
   const summonerNameSearch = req.body;
+  const globalData = new Object();
   let easier = Object.keys(summonerNameSearch);
   let summId;
   const matches = [];
-  const finalInfos = [];
 
   let infoRequest = async () => {
     await kayn.Summoner.by
       .name(easier)
       .then(summoner => {
-        finalInfos.push(summoner);
+        globalData.summoner = summoner;
+        otherId = summoner.id;
         summId = summoner.accountId;
+
+        kayn.League.Entries.by
+          .summonerID(otherId)
+          .then(rank => {
+            // return rank;
+            globalData.summoner.ranks = rank[0];
+          })
+          .catch(error => console.error(error));
+
         kayn.Matchlist.by
           .accountID(summId)
           .query({
@@ -80,43 +90,29 @@ router.post("/summoner", (req, res, next) => {
                   });
                 });
 
-                b.map(onePlayer => {
-                  onePlayer.map((touche, index) => {
+                b.map((onePlayer, index) => {
+                  onePlayer.map(touche => {
                     if (touche.participantId === showcasedSummId[index]) {
-                      showcasedSummoner.push(touche);
+                      showcasedSummoner.push(Object.assign(touche));
                     } else {
                       return;
                     }
                   });
                 });
 
-                function filtrerParID(obj) {
-                  // Si c'est un nombre
-                  if (
-                    obj.participantId !== undefined &&
-                    typeof obj.participantId === "number" &&
-                    obj.participantId === 9
-                  ) {
-                    return true;
-                  } else {
-                    return false;
-                  }
-                }
+                globalData.lastGames = resultArray;
 
-                const taupe = b.map(oneClick => {
-                  return oneClick.filter(filtrerParID);
+                globalData.lastGames.map((oneGame, index) => {
+                  oneGame.summonerGameDetails = showcasedSummoner[index];
                 });
-
-                console.log(taupe);
-
-                finalInfos.push(resultArray, showcasedSummoner);
+                // console.log(globalData.lastGames);
               })
               .catch(error => console.error(error));
           })
           .catch(error => console.error(error));
 
         setTimeout(function() {
-          res.json(finalInfos);
+          res.json(globalData);
         }, 9000);
       })
       .catch(error => console.error(error));
