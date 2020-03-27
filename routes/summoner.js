@@ -35,6 +35,7 @@ router.post("/summoner", (req, res, next) => {
   const globalData = new Object();
   let easier = Object.keys(summonerNameSearch);
   let summId;
+  let summName;
   const matches = [];
 
   let infoRequest = async () => {
@@ -42,13 +43,13 @@ router.post("/summoner", (req, res, next) => {
       .name(easier)
       .then(summoner => {
         globalData.summoner = summoner;
+        summName = summoner.name;
         otherId = summoner.id;
         summId = summoner.accountId;
 
         kayn.League.Entries.by
           .summonerID(otherId)
           .then(rank => {
-            // return rank;
             globalData.summoner.ranks = rank[0];
           })
           .catch(error => console.error(error));
@@ -79,10 +80,7 @@ router.post("/summoner", (req, res, next) => {
                 });
                 a.map(oneParticipant => {
                   oneParticipant.map(blah => {
-                    if (
-                      blah.player.summonerName.toLowerCase() ===
-                      easier.toString()
-                    ) {
+                    if (blah.player.summonerName === summName) {
                       showcasedSummId.push(blah.participantId);
                     } else {
                       return;
@@ -105,7 +103,6 @@ router.post("/summoner", (req, res, next) => {
                 globalData.lastGames.map((oneGame, index) => {
                   oneGame.summonerGameDetails = showcasedSummoner[index];
                 });
-                // console.log(globalData.lastGames);
               })
               .catch(error => console.error(error));
           })
