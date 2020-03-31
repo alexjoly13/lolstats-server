@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const axios = "axios";
 
 const { Kayn, REGIONS } = require("kayn");
 
@@ -102,6 +103,22 @@ router.post("/summoner", (req, res, next) => {
 
                 globalData.lastGames.map((oneGame, index) => {
                   oneGame.summonerGameDetails = showcasedSummoner[index];
+
+                  kayn.DDragon.Champion.list().callback(function(
+                    error,
+                    champions
+                  ) {
+                    const champArray = Object.values(champions.data);
+                    champArray.forEach(oneChamp => {
+                      if (
+                        parseInt(oneChamp.key) ===
+                        oneGame.summonerGameDetails.championId
+                      ) {
+                        oneGame.summonerGameDetails.championPlayedName =
+                          oneChamp.name;
+                      }
+                    });
+                  });
                 });
               })
               .catch(error => console.error(error));
