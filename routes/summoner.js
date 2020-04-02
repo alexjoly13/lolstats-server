@@ -58,7 +58,7 @@ router.post("/summoner", (req, res, next) => {
         kayn.Matchlist.by
           .accountID(summId)
           .query({
-            endIndex: 5
+            endIndex: 10
           })
           .then(matchlist => {
             matchlist.matches.map(oneMatch => {
@@ -141,7 +141,7 @@ router.post("/summoner", (req, res, next) => {
 
         setTimeout(function() {
           res.json(globalData);
-        }, 9000);
+        }, 19000);
       })
       .catch(error => console.error(error));
   };
