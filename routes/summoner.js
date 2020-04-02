@@ -104,6 +104,20 @@ router.post("/summoner", (req, res, next) => {
                 globalData.lastGames.map((oneGame, index) => {
                   oneGame.summonerGameDetails = showcasedSummoner[index];
 
+                  const playerItems = [];
+
+                  playerItems.push(
+                    oneGame.summonerGameDetails.stats.item0,
+                    oneGame.summonerGameDetails.stats.item1,
+                    oneGame.summonerGameDetails.stats.item2,
+                    oneGame.summonerGameDetails.stats.item3,
+                    oneGame.summonerGameDetails.stats.item4,
+                    oneGame.summonerGameDetails.stats.item5,
+                    oneGame.summonerGameDetails.stats.item6
+                  );
+
+                  oneGame.summonerGameDetails.playerItems = playerItems;
+
                   kayn.DDragon.Champion.list().callback(function(
                     error,
                     champions
