@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const axios = "axios";
+
+//// GLOBAL KAYN SETTINGS
 
 const { Kayn, REGIONS } = require("kayn");
 
@@ -31,6 +32,8 @@ const kayn = Kayn(riotApiKey)({
   }
 });
 
+//// END GLOBAL KAYN SETTINGS
+
 router.post("/summoner", (req, res, next) => {
   const summonerNameSearch = req.body;
   const globalData = new Object();
@@ -48,12 +51,16 @@ router.post("/summoner", (req, res, next) => {
         otherId = summoner.id;
         summId = summoner.accountId;
 
+        //// GET PLAYERS RANK
+
         kayn.League.Entries.by
           .summonerID(otherId)
           .then(rank => {
             globalData.summoner.ranks = rank[0];
           })
           .catch(error => console.error(error));
+
+        //// END GET PLAYERS RANK
 
         kayn.Matchlist.by
           .accountID(summId)
@@ -99,10 +106,20 @@ router.post("/summoner", (req, res, next) => {
                   });
                 });
 
+                //// SET LAST GAMES DATA
+
                 globalData.lastGames = resultArray;
+
+                //// END SET LAST GAMES DATA
+
+                //// GET SEARCHED PLAYER DETAILED GAME STATS
 
                 globalData.lastGames.map((oneGame, index) => {
                   oneGame.summonerGameDetails = showcasedSummoner[index];
+
+                  //// END GET SEARCHED PLAYER DETAILED GAME STATS
+
+                  //// GET PLAYERS ITEMS
 
                   const playerItems = [];
 
@@ -117,6 +134,10 @@ router.post("/summoner", (req, res, next) => {
                   );
 
                   oneGame.summonerGameDetails.playerItems = playerItems;
+
+                  //// END GET PLAYERS ITEMS
+
+                  //// GET PLAYERS CHAMPION NAME
 
                   kayn.DDragon.Champion.list().callback(function(
                     error,
@@ -133,6 +154,8 @@ router.post("/summoner", (req, res, next) => {
                       }
                     });
                   });
+
+                  //// END GET PLAYERS CHAMPION NAME
                 });
               })
               .catch(error => console.error(error));
