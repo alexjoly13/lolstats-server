@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 const { Kayn, REGIONS } = require("kayn");
-
 const riotApiKey = process.env.RIOT_API_KEY;
 
 const kayn = Kayn(riotApiKey)({
@@ -30,15 +29,16 @@ const kayn = Kayn(riotApiKey)({
   },
 });
 
-router.get("/champions", (req, res, next) => {
-  const champArray = [];
-  const allChampsRequest = async () => {
-    await kayn.DDragon.Champion.list().callback(function (error, champions) {
-      champArray.push(champions.data);
-      res.json(champArray);
-    });
-  };
-  allChampsRequest();
+router.get("/champions/:championName", (req, res, next) => {
+  const { championName } = req.params;
+  const fittedName = championName.replace(/\s/g, "");
+
+  kayn.DDragon.Champion.getDataById(fittedName)
+    .then((oneChampion) => {
+      console.log(oneChampion);
+      res.json(oneChampion);
+    })
+    .catch((err) => next(err));
 });
 
 module.exports = router;

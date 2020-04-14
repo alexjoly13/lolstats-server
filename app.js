@@ -10,12 +10,12 @@ const path = require("path");
 
 mongoose
   .connect("mongodb://localhost/lolinsight-server", { useNewUrlParser: true })
-  .then(x => {
+  .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
     );
   })
-  .catch(err => {
+  .catch((err) => {
     console.error("Error connecting to mongo", err);
   });
 
@@ -39,7 +39,7 @@ app.use(
     // receive cookies from other domains/origins
     credentials: true,
     // only these domains/origins can access the API
-    origin: [process.env.FRONT_URL]
+    origin: [process.env.FRONT_URL],
   })
 );
 
@@ -48,5 +48,8 @@ app.use("/", summoner);
 
 const champions = require("./routes/championsList.js");
 app.use("/", champions);
+
+const championDetails = require("./routes/championDetails.js");
+app.use("/", championDetails);
 
 module.exports = app;
