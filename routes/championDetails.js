@@ -31,9 +31,8 @@ const kayn = Kayn(riotApiKey)({
 
 router.get("/champions/:championName", (req, res, next) => {
   const { championName } = req.params;
-  const fittedName = championName.replace(/\s/g, "");
 
-  kayn.DDragon.Champion.getDataById(fittedName)
+  kayn.DDragon.Champion.get(championName)
     .then((oneChampion) => {
       res.json(oneChampion);
     })

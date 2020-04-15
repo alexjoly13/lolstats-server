@@ -38,6 +38,7 @@ const kayn = Kayn(riotApiKey)({
 router.post("/summoner", (req, res, next) => {
   const summonerNameSearch = req.body;
   const globalData = new Object();
+  const championArray = Object.values(championData.data);
   let easier = Object.keys(summonerNameSearch);
   let summId;
   let summName;
@@ -57,6 +58,8 @@ router.post("/summoner", (req, res, next) => {
         summName = summoner.name;
         otherId = summoner.id;
         summId = summoner.accountId;
+
+        // const isSummId = (element) => element == summId
 
         //// GET PLAYERS RANK
         if (summoner.summonerLevel >= 30) {
@@ -99,15 +102,25 @@ router.post("/summoner", (req, res, next) => {
 
             await Promise.all(matchIndex)
               .then((resultArray) => {
-                const a = [];
-                const b = [];
+                const participantIdentitiesArray = [];
+                const participantsArray = [];
                 let showcasedSummId = [];
                 let showcasedSummoner = [];
-                resultArray.map((oneGame) => {
-                  a.push(oneGame.participantIdentities);
-                  b.push(oneGame.participants);
+
+                //// SET LAST GAMES DATA
+
+                globalData.lastGames = resultArray;
+
+                //// END SET LAST GAMES DATA
+
+                resultArray.forEach((oneGame) => {
+                  participantIdentitiesArray.push(
+                    oneGame.participantIdentities
+                  );
+                  participantsArray.push(oneGame.participants);
                 });
-                a.map((oneParticipant) => {
+
+                participantIdentitiesArray.map((oneParticipant) => {
                   oneParticipant.map((blah) => {
                     if (blah.player.summonerName === summName) {
                       showcasedSummId.push(blah.participantId);
@@ -117,7 +130,7 @@ router.post("/summoner", (req, res, next) => {
                   });
                 });
 
-                b.map((onePlayer, index) => {
+                participantsArray.map((onePlayer, index) => {
                   onePlayer.map((touche) => {
                     if (touche.participantId === showcasedSummId[index]) {
                       showcasedSummoner.push(Object.assign(touche));
@@ -127,12 +140,6 @@ router.post("/summoner", (req, res, next) => {
                   });
                 });
 
-                //// SET LAST GAMES DATA
-
-                globalData.lastGames = resultArray;
-
-                //// END SET LAST GAMES DATA
-
                 globalData.lastGamesStats = {};
 
                 globalData.lastGamesStats.victories = 0;
@@ -140,7 +147,7 @@ router.post("/summoner", (req, res, next) => {
 
                 //// GET SEARCHED PLAYER DETAILED GAME STATS
 
-                globalData.lastGames.map((oneGame, index) => {
+                globalData.lastGames.forEach((oneGame, index) => {
                   oneGame.summonerGameDetails = showcasedSummoner[index];
 
                   //// END GET SEARCHED PLAYER DETAILED GAME STATS
@@ -180,8 +187,6 @@ router.post("/summoner", (req, res, next) => {
                   //// END V/L RATIO
 
                   //// GET PLAYERS CHAMPION NAME
-
-                  const championArray = Object.values(championData.data);
 
                   championArray.forEach((oneChampion) => {
                     if (
