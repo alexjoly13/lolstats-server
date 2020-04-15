@@ -35,7 +35,6 @@ router.get("/champions/:championName", (req, res, next) => {
 
   kayn.DDragon.Champion.getDataById(fittedName)
     .then((oneChampion) => {
-      console.log(oneChampion);
       res.json(oneChampion);
     })
     .catch((err) => next(err));

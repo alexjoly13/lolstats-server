@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const championData = require("../data/champion.json");
 
 //// GLOBAL KAYN SETTINGS
 
@@ -43,6 +44,12 @@ router.post("/summoner", (req, res, next) => {
   const matches = [];
 
   let infoRequest = async () => {
+    await kayn.DDragon.Version.list()
+      .then((gameVersion) => {
+        globalData.version = gameVersion[0];
+      })
+      .catch((err) => next(err));
+
     await kayn.Summoner.by
       .name(easier)
       .then(async (summoner) => {
@@ -63,10 +70,23 @@ router.post("/summoner", (req, res, next) => {
 
         //// END GET PLAYERS RANK
 
+        // await kayn.Matchlist.by
+        //   .accountID(summId)
+        //   .query({
+        //     season: 13,
+        //     queue: [420],
+        //   })
+        //   .then((gamesList) => {
+        //     console.log(gamesList);
+        //   })
+        //   .catch((err) => next(err));
+
+        /////////////////
+
         await kayn.Matchlist.by
           .accountID(summId)
           .query({
-            endIndex: 6,
+            endIndex: 10,
           })
           .then(async (matchlist) => {
             matchlist.matches.map((oneMatch) => {
@@ -120,7 +140,7 @@ router.post("/summoner", (req, res, next) => {
 
                 //// GET SEARCHED PLAYER DETAILED GAME STATS
 
-                globalData.lastGames.map(async (oneGame, index) => {
+                globalData.lastGames.map((oneGame, index) => {
                   oneGame.summonerGameDetails = showcasedSummoner[index];
 
                   //// END GET SEARCHED PLAYER DETAILED GAME STATS
@@ -161,23 +181,17 @@ router.post("/summoner", (req, res, next) => {
 
                   //// GET PLAYERS CHAMPION NAME
 
-                  kayn.DDragon.Champion.list()
-                    .then((champions) => {
-                      const champArray = Object.values(champions.data);
-                      champArray.forEach((oneChamp) => {
-                        if (
-                          parseInt(oneChamp.key) ===
-                          oneGame.summonerGameDetails.championId
-                        ) {
-                          oneGame.summonerGameDetails.championPlayedName =
-                            oneChamp.name;
-                          console.log(
-                            oneGame.summonerGameDetails.championPlayedName
-                          );
-                        }
-                      });
-                    })
-                    .catch((error) => console.error(error));
+                  const championArray = Object.values(championData.data);
+
+                  championArray.forEach((oneChampion) => {
+                    if (
+                      parseInt(oneChampion.key) ===
+                      oneGame.summonerGameDetails.championId
+                    ) {
+                      oneGame.summonerGameDetails.championPlayedName =
+                        oneChampion.name;
+                    }
+                  });
 
                   //// END GET PLAYERS CHAMPION NAME
                 });
