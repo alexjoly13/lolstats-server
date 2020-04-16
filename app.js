@@ -9,7 +9,10 @@ const logger = require("morgan");
 const path = require("path");
 
 mongoose
-  .connect("mongodb://localhost/lolinsight-server", { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -42,6 +45,9 @@ app.use(
     origin: [process.env.FRONT_URL],
   })
 );
+
+const version = require("./routes/version-checker.js");
+app.use("/", version);
 
 const summoner = require("./routes/summoner.js");
 app.use("/", summoner);

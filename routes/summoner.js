@@ -45,12 +45,6 @@ router.post("/summoner", (req, res, next) => {
   const matches = [];
 
   let infoRequest = async () => {
-    await kayn.DDragon.Version.list()
-      .then((gameVersion) => {
-        globalData.version = gameVersion[0];
-      })
-      .catch((err) => next(err));
-
     await kayn.Summoner.by
       .name(easier)
       .then(async (summoner) => {
