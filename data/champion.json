@@ -1,10 +1,10 @@
 {
   "type": "champion",
   "format": "standAloneComplex",
-  "version": "10.7.1",
+  "version": "10.8.1",
   "data": {
     "Aatrox": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Aatrox",
       "key": "266",
       "name": "Aatrox",
@@ -46,7 +46,7 @@
       }
     },
     "Ahri": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Ahri",
       "key": "103",
       "name": "Ahri",
@@ -88,7 +88,7 @@
       }
     },
     "Akali": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Akali",
       "key": "84",
       "name": "Akali",
@@ -130,7 +130,7 @@
       }
     },
     "Alistar": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Alistar",
       "key": "12",
       "name": "Alistar",
@@ -172,7 +172,7 @@
       }
     },
     "Amumu": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Amumu",
       "key": "32",
       "name": "Amumu",
@@ -214,7 +214,7 @@
       }
     },
     "Anivia": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Anivia",
       "key": "34",
       "name": "Anivia",
@@ -256,7 +256,7 @@
       }
     },
     "Annie": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Annie",
       "key": "1",
       "name": "Annie",
@@ -298,7 +298,7 @@
       }
     },
     "Aphelios": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Aphelios",
       "key": "523",
       "name": "Aphelios",
@@ -340,7 +340,7 @@
       }
     },
     "Ashe": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Ashe",
       "key": "22",
       "name": "Ashe",
@@ -382,7 +382,7 @@
       }
     },
     "AurelionSol": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "AurelionSol",
       "key": "136",
       "name": "Aurelion Sol",
@@ -424,7 +424,7 @@
       }
     },
     "Azir": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Azir",
       "key": "268",
       "name": "Azir",
@@ -466,7 +466,7 @@
       }
     },
     "Bard": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Bard",
       "key": "432",
       "name": "Bard",
@@ -508,7 +508,7 @@
       }
     },
     "Blitzcrank": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Blitzcrank",
       "key": "53",
       "name": "Blitzcrank",
@@ -550,7 +550,7 @@
       }
     },
     "Brand": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Brand",
       "key": "63",
       "name": "Brand",
@@ -592,7 +592,7 @@
       }
     },
     "Braum": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Braum",
       "key": "201",
       "name": "Braum",
@@ -634,7 +634,7 @@
       }
     },
     "Caitlyn": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Caitlyn",
       "key": "51",
       "name": "Caitlyn",
@@ -676,7 +676,7 @@
       }
     },
     "Camille": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Camille",
       "key": "164",
       "name": "Camille",
@@ -718,7 +718,7 @@
       }
     },
     "Cassiopeia": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Cassiopeia",
       "key": "69",
       "name": "Cassiopeia",
@@ -760,7 +760,7 @@
       }
     },
     "Chogath": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Chogath",
       "key": "31",
       "name": "Cho'Gath",
@@ -802,7 +802,7 @@
       }
     },
     "Corki": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Corki",
       "key": "42",
       "name": "Corki",
@@ -844,7 +844,7 @@
       }
     },
     "Darius": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Darius",
       "key": "122",
       "name": "Darius",
@@ -886,7 +886,7 @@
       }
     },
     "Diana": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Diana",
       "key": "131",
       "name": "Diana",
@@ -928,7 +928,7 @@
       }
     },
     "Draven": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Draven",
       "key": "119",
       "name": "Draven",
@@ -970,7 +970,7 @@
       }
     },
     "DrMundo": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "DrMundo",
       "key": "36",
       "name": "Dr. Mundo",
@@ -1012,7 +1012,7 @@
       }
     },
     "Ekko": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Ekko",
       "key": "245",
       "name": "Ekko",
@@ -1054,7 +1054,7 @@
       }
     },
     "Elise": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Elise",
       "key": "60",
       "name": "Elise",
@@ -1096,7 +1096,7 @@
       }
     },
     "Evelynn": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Evelynn",
       "key": "28",
       "name": "Evelynn",
@@ -1138,7 +1138,7 @@
       }
     },
     "Ezreal": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Ezreal",
       "key": "81",
       "name": "Ezreal",
@@ -1180,7 +1180,7 @@
       }
     },
     "Fiddlesticks": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Fiddlesticks",
       "key": "9",
       "name": "Fiddlesticks",
@@ -1222,7 +1222,7 @@
       }
     },
     "Fiora": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Fiora",
       "key": "114",
       "name": "Fiora",
@@ -1264,7 +1264,7 @@
       }
     },
     "Fizz": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Fizz",
       "key": "105",
       "name": "Fizz",
@@ -1306,7 +1306,7 @@
       }
     },
     "Galio": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Galio",
       "key": "3",
       "name": "Galio",
@@ -1348,7 +1348,7 @@
       }
     },
     "Gangplank": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Gangplank",
       "key": "41",
       "name": "Gangplank",
@@ -1390,7 +1390,7 @@
       }
     },
     "Garen": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Garen",
       "key": "86",
       "name": "Garen",
@@ -1432,7 +1432,7 @@
       }
     },
     "Gnar": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Gnar",
       "key": "150",
       "name": "Gnar",
@@ -1474,7 +1474,7 @@
       }
     },
     "Gragas": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Gragas",
       "key": "79",
       "name": "Gragas",
@@ -1516,7 +1516,7 @@
       }
     },
     "Graves": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Graves",
       "key": "104",
       "name": "Graves",
@@ -1558,7 +1558,7 @@
       }
     },
     "Hecarim": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Hecarim",
       "key": "120",
       "name": "Hecarim",
@@ -1600,7 +1600,7 @@
       }
     },
     "Heimerdinger": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Heimerdinger",
       "key": "74",
       "name": "Heimerdinger",
@@ -1642,7 +1642,7 @@
       }
     },
     "Illaoi": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Illaoi",
       "key": "420",
       "name": "Illaoi",
@@ -1684,7 +1684,7 @@
       }
     },
     "Irelia": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Irelia",
       "key": "39",
       "name": "Irelia",
@@ -1726,7 +1726,7 @@
       }
     },
     "Ivern": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Ivern",
       "key": "427",
       "name": "Ivern",
@@ -1768,7 +1768,7 @@
       }
     },
     "Janna": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Janna",
       "key": "40",
       "name": "Janna",
@@ -1810,7 +1810,7 @@
       }
     },
     "JarvanIV": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "JarvanIV",
       "key": "59",
       "name": "Jarvan IV",
@@ -1852,7 +1852,7 @@
       }
     },
     "Jax": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Jax",
       "key": "24",
       "name": "Jax",
@@ -1894,7 +1894,7 @@
       }
     },
     "Jayce": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Jayce",
       "key": "126",
       "name": "Jayce",
@@ -1936,7 +1936,7 @@
       }
     },
     "Jhin": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Jhin",
       "key": "202",
       "name": "Jhin",
@@ -1978,7 +1978,7 @@
       }
     },
     "Jinx": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Jinx",
       "key": "222",
       "name": "Jinx",
@@ -2020,7 +2020,7 @@
       }
     },
     "Kaisa": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Kaisa",
       "key": "145",
       "name": "Kai'Sa",
@@ -2062,7 +2062,7 @@
       }
     },
     "Kalista": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Kalista",
       "key": "429",
       "name": "Kalista",
@@ -2086,7 +2086,7 @@
         "mp": 250,
         "mpperlevel": 45,
         "movespeed": 325,
-        "armor": 23,
+        "armor": 21,
         "armorperlevel": 4,
         "spellblock": 30,
         "spellblockperlevel": 0.5,
@@ -2104,7 +2104,7 @@
       }
     },
     "Karma": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Karma",
       "key": "43",
       "name": "Karma",
@@ -2146,7 +2146,7 @@
       }
     },
     "Karthus": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Karthus",
       "key": "30",
       "name": "Karthus",
@@ -2188,7 +2188,7 @@
       }
     },
     "Kassadin": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Kassadin",
       "key": "38",
       "name": "Kassadin",
@@ -2230,7 +2230,7 @@
       }
     },
     "Katarina": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Katarina",
       "key": "55",
       "name": "Katarina",
@@ -2272,7 +2272,7 @@
       }
     },
     "Kayle": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Kayle",
       "key": "10",
       "name": "Kayle",
@@ -2314,7 +2314,7 @@
       }
     },
     "Kayn": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Kayn",
       "key": "141",
       "name": "Kayn",
@@ -2356,7 +2356,7 @@
       }
     },
     "Kennen": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Kennen",
       "key": "85",
       "name": "Kennen",
@@ -2398,7 +2398,7 @@
       }
     },
     "Khazix": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Khazix",
       "key": "121",
       "name": "Kha'Zix",
@@ -2440,7 +2440,7 @@
       }
     },
     "Kindred": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Kindred",
       "key": "203",
       "name": "Kindred",
@@ -2482,7 +2482,7 @@
       }
     },
     "Kled": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Kled",
       "key": "240",
       "name": "Kled",
@@ -2524,7 +2524,7 @@
       }
     },
     "KogMaw": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "KogMaw",
       "key": "96",
       "name": "Kog'Maw",
@@ -2566,7 +2566,7 @@
       }
     },
     "Leblanc": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Leblanc",
       "key": "7",
       "name": "LeBlanc",
@@ -2608,7 +2608,7 @@
       }
     },
     "LeeSin": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "LeeSin",
       "key": "64",
       "name": "Lee Sin",
@@ -2650,7 +2650,7 @@
       }
     },
     "Leona": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Leona",
       "key": "89",
       "name": "Leona",
@@ -2692,7 +2692,7 @@
       }
     },
     "Lissandra": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Lissandra",
       "key": "127",
       "name": "Lissandra",
@@ -2734,7 +2734,7 @@
       }
     },
     "Lucian": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Lucian",
       "key": "236",
       "name": "Lucian",
@@ -2776,7 +2776,7 @@
       }
     },
     "Lulu": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Lulu",
       "key": "117",
       "name": "Lulu",
@@ -2818,7 +2818,7 @@
       }
     },
     "Lux": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Lux",
       "key": "99",
       "name": "Lux",
@@ -2860,7 +2860,7 @@
       }
     },
     "Malphite": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Malphite",
       "key": "54",
       "name": "Malphite",
@@ -2902,7 +2902,7 @@
       }
     },
     "Malzahar": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Malzahar",
       "key": "90",
       "name": "Malzahar",
@@ -2944,7 +2944,7 @@
       }
     },
     "Maokai": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Maokai",
       "key": "57",
       "name": "Maokai",
@@ -2986,7 +2986,7 @@
       }
     },
     "MasterYi": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "MasterYi",
       "key": "11",
       "name": "Master Yi",
@@ -3028,7 +3028,7 @@
       }
     },
     "MissFortune": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "MissFortune",
       "key": "21",
       "name": "Miss Fortune",
@@ -3070,7 +3070,7 @@
       }
     },
     "MonkeyKing": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "MonkeyKing",
       "key": "62",
       "name": "Wukong",
@@ -3112,7 +3112,7 @@
       }
     },
     "Mordekaiser": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Mordekaiser",
       "key": "82",
       "name": "Mordekaiser",
@@ -3154,7 +3154,7 @@
       }
     },
     "Morgana": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Morgana",
       "key": "25",
       "name": "Morgana",
@@ -3196,7 +3196,7 @@
       }
     },
     "Nami": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Nami",
       "key": "267",
       "name": "Nami",
@@ -3238,7 +3238,7 @@
       }
     },
     "Nasus": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Nasus",
       "key": "75",
       "name": "Nasus",
@@ -3280,7 +3280,7 @@
       }
     },
     "Nautilus": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Nautilus",
       "key": "111",
       "name": "Nautilus",
@@ -3322,7 +3322,7 @@
       }
     },
     "Neeko": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Neeko",
       "key": "518",
       "name": "Neeko",
@@ -3364,7 +3364,7 @@
       }
     },
     "Nidalee": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Nidalee",
       "key": "76",
       "name": "Nidalee",
@@ -3406,7 +3406,7 @@
       }
     },
     "Nocturne": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Nocturne",
       "key": "56",
       "name": "Nocturne",
@@ -3448,7 +3448,7 @@
       }
     },
     "Nunu": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Nunu",
       "key": "20",
       "name": "Nunu & Willump",
@@ -3490,7 +3490,7 @@
       }
     },
     "Olaf": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Olaf",
       "key": "2",
       "name": "Olaf",
@@ -3532,7 +3532,7 @@
       }
     },
     "Orianna": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Orianna",
       "key": "61",
       "name": "Orianna",
@@ -3574,7 +3574,7 @@
       }
     },
     "Ornn": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Ornn",
       "key": "516",
       "name": "Ornn",
@@ -3616,7 +3616,7 @@
       }
     },
     "Pantheon": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Pantheon",
       "key": "80",
       "name": "Pantheon",
@@ -3658,7 +3658,7 @@
       }
     },
     "Poppy": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Poppy",
       "key": "78",
       "name": "Poppy",
@@ -3700,7 +3700,7 @@
       }
     },
     "Pyke": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Pyke",
       "key": "555",
       "name": "Pyke",
@@ -3742,7 +3742,7 @@
       }
     },
     "Qiyana": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Qiyana",
       "key": "246",
       "name": "Qiyana",
@@ -3784,7 +3784,7 @@
       }
     },
     "Quinn": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Quinn",
       "key": "133",
       "name": "Quinn",
@@ -3826,7 +3826,7 @@
       }
     },
     "Rakan": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Rakan",
       "key": "497",
       "name": "Rakan",
@@ -3868,7 +3868,7 @@
       }
     },
     "Rammus": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Rammus",
       "key": "33",
       "name": "Rammus",
@@ -3910,7 +3910,7 @@
       }
     },
     "RekSai": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "RekSai",
       "key": "421",
       "name": "Rek'Sai",
@@ -3952,7 +3952,7 @@
       }
     },
     "Renekton": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Renekton",
       "key": "58",
       "name": "Renekton",
@@ -3994,7 +3994,7 @@
       }
     },
     "Rengar": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Rengar",
       "key": "107",
       "name": "Rengar",
@@ -4036,7 +4036,7 @@
       }
     },
     "Riven": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Riven",
       "key": "92",
       "name": "Riven",
@@ -4078,7 +4078,7 @@
       }
     },
     "Rumble": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Rumble",
       "key": "68",
       "name": "Rumble",
@@ -4120,7 +4120,7 @@
       }
     },
     "Ryze": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Ryze",
       "key": "13",
       "name": "Ryze",
@@ -4139,12 +4139,12 @@
       "tags": ["Mage", "Fighter"],
       "partype": "Mana",
       "stats": {
-        "hp": 570.48,
+        "hp": 575,
         "hpperlevel": 98,
         "mp": 300,
         "mpperlevel": 50,
         "movespeed": 340,
-        "armor": 21.552,
+        "armor": 22,
         "armorperlevel": 3,
         "spellblock": 34,
         "spellblockperlevel": 0.5,
@@ -4155,14 +4155,14 @@
         "mpregenperlevel": 1,
         "crit": 0,
         "critperlevel": 0,
-        "attackdamage": 55.04,
+        "attackdamage": 56,
         "attackdamageperlevel": 3,
         "attackspeedperlevel": 2.112,
         "attackspeed": 0.625
       }
     },
     "Sejuani": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Sejuani",
       "key": "113",
       "name": "Sejuani",
@@ -4204,7 +4204,7 @@
       }
     },
     "Senna": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Senna",
       "key": "235",
       "name": "Senna",
@@ -4246,7 +4246,7 @@
       }
     },
     "Sett": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Sett",
       "key": "875",
       "name": "Sett",
@@ -4288,7 +4288,7 @@
       }
     },
     "Shaco": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Shaco",
       "key": "35",
       "name": "Shaco",
@@ -4330,7 +4330,7 @@
       }
     },
     "Shen": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Shen",
       "key": "98",
       "name": "Shen",
@@ -4372,7 +4372,7 @@
       }
     },
     "Shyvana": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Shyvana",
       "key": "102",
       "name": "Shyvana",
@@ -4414,7 +4414,7 @@
       }
     },
     "Singed": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Singed",
       "key": "27",
       "name": "Singed",
@@ -4456,7 +4456,7 @@
       }
     },
     "Sion": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Sion",
       "key": "14",
       "name": "Sion",
@@ -4498,7 +4498,7 @@
       }
     },
     "Sivir": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Sivir",
       "key": "15",
       "name": "Sivir",
@@ -4540,7 +4540,7 @@
       }
     },
     "Skarner": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Skarner",
       "key": "72",
       "name": "Skarner",
@@ -4582,7 +4582,7 @@
       }
     },
     "Sona": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Sona",
       "key": "37",
       "name": "Sona",
@@ -4624,7 +4624,7 @@
       }
     },
     "Soraka": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Soraka",
       "key": "16",
       "name": "Soraka",
@@ -4645,7 +4645,7 @@
       "stats": {
         "hp": 535,
         "hpperlevel": 74,
-        "mp": 375,
+        "mp": 425,
         "mpperlevel": 40,
         "movespeed": 325,
         "armor": 32,
@@ -4666,7 +4666,7 @@
       }
     },
     "Swain": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Swain",
       "key": "50",
       "name": "Swain",
@@ -4708,7 +4708,7 @@
       }
     },
     "Sylas": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Sylas",
       "key": "517",
       "name": "Sylas",
@@ -4750,7 +4750,7 @@
       }
     },
     "Syndra": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Syndra",
       "key": "134",
       "name": "Syndra",
@@ -4792,7 +4792,7 @@
       }
     },
     "TahmKench": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "TahmKench",
       "key": "223",
       "name": "Tahm Kench",
@@ -4834,7 +4834,7 @@
       }
     },
     "Taliyah": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Taliyah",
       "key": "163",
       "name": "Taliyah",
@@ -4876,7 +4876,7 @@
       }
     },
     "Talon": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Talon",
       "key": "91",
       "name": "Talon",
@@ -4918,7 +4918,7 @@
       }
     },
     "Taric": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Taric",
       "key": "44",
       "name": "Taric",
@@ -4960,7 +4960,7 @@
       }
     },
     "Teemo": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Teemo",
       "key": "17",
       "name": "Teemo",
@@ -5002,7 +5002,7 @@
       }
     },
     "Thresh": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Thresh",
       "key": "412",
       "name": "Thresh",
@@ -5044,7 +5044,7 @@
       }
     },
     "Tristana": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Tristana",
       "key": "18",
       "name": "Tristana",
@@ -5086,7 +5086,7 @@
       }
     },
     "Trundle": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Trundle",
       "key": "48",
       "name": "Trundle",
@@ -5128,7 +5128,7 @@
       }
     },
     "Tryndamere": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Tryndamere",
       "key": "23",
       "name": "Tryndamere",
@@ -5170,7 +5170,7 @@
       }
     },
     "TwistedFate": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "TwistedFate",
       "key": "4",
       "name": "Twisted Fate",
@@ -5212,7 +5212,7 @@
       }
     },
     "Twitch": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Twitch",
       "key": "29",
       "name": "Twitch",
@@ -5254,7 +5254,7 @@
       }
     },
     "Udyr": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Udyr",
       "key": "77",
       "name": "Udyr",
@@ -5296,7 +5296,7 @@
       }
     },
     "Urgot": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Urgot",
       "key": "6",
       "name": "Urgot",
@@ -5338,7 +5338,7 @@
       }
     },
     "Varus": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Varus",
       "key": "110",
       "name": "Varus",
@@ -5380,7 +5380,7 @@
       }
     },
     "Vayne": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Vayne",
       "key": "67",
       "name": "Vayne",
@@ -5422,7 +5422,7 @@
       }
     },
     "Veigar": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Veigar",
       "key": "45",
       "name": "Veigar",
@@ -5464,7 +5464,7 @@
       }
     },
     "Velkoz": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Velkoz",
       "key": "161",
       "name": "Vel'Koz",
@@ -5506,7 +5506,7 @@
       }
     },
     "Vi": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Vi",
       "key": "254",
       "name": "Vi",
@@ -5548,7 +5548,7 @@
       }
     },
     "Viktor": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Viktor",
       "key": "112",
       "name": "Viktor",
@@ -5590,7 +5590,7 @@
       }
     },
     "Vladimir": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Vladimir",
       "key": "8",
       "name": "Vladimir",
@@ -5632,7 +5632,7 @@
       }
     },
     "Volibear": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Volibear",
       "key": "106",
       "name": "Volibear",
@@ -5674,7 +5674,7 @@
       }
     },
     "Warwick": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Warwick",
       "key": "19",
       "name": "Warwick",
@@ -5716,7 +5716,7 @@
       }
     },
     "Xayah": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Xayah",
       "key": "498",
       "name": "Xayah",
@@ -5758,7 +5758,7 @@
       }
     },
     "Xerath": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Xerath",
       "key": "101",
       "name": "Xerath",
@@ -5800,7 +5800,7 @@
       }
     },
     "XinZhao": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "XinZhao",
       "key": "5",
       "name": "Xin Zhao",
@@ -5842,7 +5842,7 @@
       }
     },
     "Yasuo": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Yasuo",
       "key": "157",
       "name": "Yasuo",
@@ -5884,7 +5884,7 @@
       }
     },
     "Yorick": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Yorick",
       "key": "83",
       "name": "Yorick",
@@ -5926,7 +5926,7 @@
       }
     },
     "Yuumi": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Yuumi",
       "key": "350",
       "name": "Yuumi",
@@ -5968,7 +5968,7 @@
       }
     },
     "Zac": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Zac",
       "key": "154",
       "name": "Zac",
@@ -6010,7 +6010,7 @@
       }
     },
     "Zed": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Zed",
       "key": "238",
       "name": "Zed",
@@ -6052,7 +6052,7 @@
       }
     },
     "Ziggs": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Ziggs",
       "key": "115",
       "name": "Ziggs",
@@ -6094,7 +6094,7 @@
       }
     },
     "Zilean": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Zilean",
       "key": "26",
       "name": "Zilean",
@@ -6136,7 +6136,7 @@
       }
     },
     "Zoe": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Zoe",
       "key": "142",
       "name": "Zoe",
@@ -6178,7 +6178,7 @@
       }
     },
     "Zyra": {
-      "version": "10.7.1",
+      "version": "10.8.1",
       "id": "Zyra",
       "key": "143",
       "name": "Zyra",
