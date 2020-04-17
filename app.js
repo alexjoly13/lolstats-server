@@ -58,4 +58,7 @@ app.use("/", champions);
 const championDetails = require("./routes/championDetails.js");
 app.use("/", championDetails);
 
+const esportHomepage = require("./routes/esport-homepage-router.js");
+app.use("/", esportHomepage);
+
 module.exports = app;
