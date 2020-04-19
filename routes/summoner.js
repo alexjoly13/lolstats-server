@@ -39,14 +39,21 @@ router.post("/summoner", (req, res, next) => {
   const summonerNameSearch = req.body;
   const globalData = new Object();
   const championArray = Object.values(championData.data);
-  let easier = Object.keys(summonerNameSearch);
+  let trimmedSummonerName = Object.keys(summonerNameSearch);
   let summId;
   let summName;
   const matches = [];
 
+  const getDetailedTeams = (participantsArray, participantsIdentitiesArray) => {
+    return participantsArray.map((f, index) => {
+      return (f.summonerName =
+        participantsIdentitiesArray[index].player.summonerName);
+    });
+  };
+
   let infoRequest = async () => {
     await kayn.Summoner.by
-      .name(easier)
+      .name(trimmedSummonerName)
       .then(async (summoner) => {
         globalData.summoner = summoner;
         summName = summoner.name;
@@ -143,6 +150,14 @@ router.post("/summoner", (req, res, next) => {
 
                 globalData.lastGames.forEach((oneGame, index) => {
                   oneGame.summonerGameDetails = showcasedSummoner[index];
+
+                  oneGame.participants.summonerName = getDetailedTeams(
+                    oneGame.participants,
+                    oneGame.participantIdentities,
+                    100
+                  );
+
+                  delete oneGame.participantIdentities;
 
                   //// END GET SEARCHED PLAYER DETAILED GAME STATS
 
