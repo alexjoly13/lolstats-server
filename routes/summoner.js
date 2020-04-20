@@ -65,10 +65,20 @@ router.post("/summoner", (req, res, next) => {
       ) {
         filteredPositionsTeam[0] = onePlayer;
       } else if (
+        onePlayer.timeline.role === "DUO" &&
+        onePlayer.timeline.lane === "TOP"
+      ) {
+        filteredPositionsTeam[0] = onePlayer;
+      } else if (
         onePlayer.timeline.role === "NONE" &&
         onePlayer.timeline.lane === "JUNGLE"
       ) {
         filteredPositionsTeam[1] = onePlayer;
+      } else if (
+        onePlayer.timeline.role === "DUO" &&
+        onePlayer.timeline.lane === "MIDDLE"
+      ) {
+        filteredPositionsTeam[2] = onePlayer;
       } else if (
         onePlayer.timeline.role === "SOLO" &&
         onePlayer.timeline.lane === "MIDDLE"
@@ -77,6 +87,12 @@ router.post("/summoner", (req, res, next) => {
       } else if (
         onePlayer.timeline.role === "DUO_CARRY" &&
         onePlayer.timeline.lane === "BOTTOM"
+      ) {
+        filteredPositionsTeam[3] = onePlayer;
+      } else if (
+        onePlayer.timeline.role === "DUO" &&
+        onePlayer.timeline.lane === "BOTTOM" &&
+        onePlayer.timeline.creepsPerMinDeltas[10 - 20] > 2
       ) {
         filteredPositionsTeam[3] = onePlayer;
       } else {
