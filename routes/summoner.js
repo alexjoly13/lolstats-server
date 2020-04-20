@@ -51,6 +51,42 @@ router.post("/summoner", (req, res, next) => {
     });
   };
 
+  const splitTeams = (participantsArray, teamsId) => {
+    return participantsArray.filter((player) => player.teamId === teamsId);
+  };
+
+  const orderTeams = (splitTeam) => {
+    const filteredPositionsTeam = [];
+
+    splitTeam.map((onePlayer) => {
+      if (
+        onePlayer.timeline.role === "SOLO" &&
+        onePlayer.timeline.lane === "TOP"
+      ) {
+        filteredPositionsTeam[0] = onePlayer;
+      } else if (
+        onePlayer.timeline.role === "NONE" &&
+        onePlayer.timeline.lane === "JUNGLE"
+      ) {
+        filteredPositionsTeam[1] = onePlayer;
+      } else if (
+        onePlayer.timeline.role === "SOLO" &&
+        onePlayer.timeline.lane === "MIDDLE"
+      ) {
+        filteredPositionsTeam[2] = onePlayer;
+      } else if (
+        onePlayer.timeline.role === "DUO_CARRY" &&
+        onePlayer.timeline.lane === "BOTTOM"
+      ) {
+        filteredPositionsTeam[3] = onePlayer;
+      } else {
+        filteredPositionsTeam[4] = onePlayer;
+      }
+    });
+
+    return filteredPositionsTeam;
+  };
+
   let infoRequest = async () => {
     await kayn.Summoner.by
       .name(trimmedSummonerName)
@@ -59,8 +95,6 @@ router.post("/summoner", (req, res, next) => {
         summName = summoner.name;
         otherId = summoner.id;
         summId = summoner.accountId;
-
-        // const isSummId = (element) => element == summId
 
         //// GET PLAYERS RANK
         if (summoner.summonerLevel >= 30) {
@@ -158,6 +192,12 @@ router.post("/summoner", (req, res, next) => {
                   );
 
                   delete oneGame.participantIdentities;
+
+                  const blueTeam = splitTeams(oneGame.participants, 100);
+                  const redTeam = splitTeams(oneGame.participants, 200);
+
+                  oneGame.teams[0].teamMembers = orderTeams(blueTeam);
+                  oneGame.teams[1].teamMembers = orderTeams(redTeam);
 
                   //// END GET SEARCHED PLAYER DETAILED GAME STATS
 
