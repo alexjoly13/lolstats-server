@@ -217,24 +217,6 @@ router.post("/summoner", (req, res, next) => {
 
                   //// END GET SEARCHED PLAYER DETAILED GAME STATS
 
-                  //// GET PLAYERS ITEMS
-
-                  const playerItems = [];
-
-                  playerItems.push(
-                    oneGame.summonerGameDetails.stats.item0,
-                    oneGame.summonerGameDetails.stats.item1,
-                    oneGame.summonerGameDetails.stats.item2,
-                    oneGame.summonerGameDetails.stats.item3,
-                    oneGame.summonerGameDetails.stats.item4,
-                    oneGame.summonerGameDetails.stats.item5,
-                    oneGame.summonerGameDetails.stats.item6
-                  );
-
-                  oneGame.summonerGameDetails.playerItems = playerItems;
-
-                  //// END GET PLAYERS ITEMS
-
                   //// GET V/L RATIO
 
                   oneGame.summonerGameDetails.stats.win == true
