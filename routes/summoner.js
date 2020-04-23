@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const championData = require("../data/champion.json");
+const functionTools = require("../helpers/summoner-route-helper.js");
 
 //// GLOBAL KAYN SETTINGS
 
@@ -44,66 +45,7 @@ router.post("/summoner", (req, res, next) => {
   let summName;
   const matches = [];
 
-  const getDetailedTeams = (participantsArray, participantsIdentitiesArray) => {
-    return participantsArray.map((f, index) => {
-      return (f.summonerName =
-        participantsIdentitiesArray[index].player.summonerName);
-    });
-  };
-
-  const splitTeams = (participantsArray, teamsId) => {
-    return participantsArray.filter((player) => player.teamId === teamsId);
-  };
-
-  const orderTeams = (splitTeam) => {
-    const filteredPositionsTeam = [];
-
-    splitTeam.map((onePlayer) => {
-      if (
-        onePlayer.timeline.role === "SOLO" &&
-        onePlayer.timeline.lane === "TOP"
-      ) {
-        filteredPositionsTeam[0] = onePlayer;
-      } else if (
-        onePlayer.timeline.role === "DUO" &&
-        onePlayer.timeline.lane === "TOP"
-      ) {
-        filteredPositionsTeam[0] = onePlayer;
-      } else if (
-        onePlayer.timeline.role === "NONE" &&
-        onePlayer.timeline.lane === "JUNGLE"
-      ) {
-        filteredPositionsTeam[1] = onePlayer;
-      } else if (
-        onePlayer.timeline.role === "DUO" &&
-        onePlayer.timeline.lane === "MIDDLE"
-      ) {
-        filteredPositionsTeam[2] = onePlayer;
-      } else if (
-        onePlayer.timeline.role === "SOLO" &&
-        onePlayer.timeline.lane === "MIDDLE"
-      ) {
-        filteredPositionsTeam[2] = onePlayer;
-      } else if (
-        onePlayer.timeline.role === "DUO_CARRY" &&
-        onePlayer.timeline.lane === "BOTTOM"
-      ) {
-        filteredPositionsTeam[3] = onePlayer;
-      } else if (
-        onePlayer.timeline.role === "DUO" &&
-        onePlayer.timeline.lane === "BOTTOM" &&
-        onePlayer.timeline.creepsPerMinDeltas[10 - 20] > 2
-      ) {
-        filteredPositionsTeam[3] = onePlayer;
-      } else {
-        filteredPositionsTeam[4] = onePlayer;
-      }
-    });
-
-    return filteredPositionsTeam;
-  };
-
-  let infoRequest = async () => {
+  const infoRequest = async () => {
     await kayn.Summoner.by
       .name(trimmedSummonerName)
       .then(async (summoner) => {
@@ -113,6 +55,7 @@ router.post("/summoner", (req, res, next) => {
         summId = summoner.accountId;
 
         //// GET PLAYERS RANK
+
         if (summoner.summonerLevel >= 30) {
           await kayn.League.Entries.by
             .summonerID(otherId)
@@ -153,10 +96,11 @@ router.post("/summoner", (req, res, next) => {
 
             await Promise.all(matchIndex)
               .then((resultArray) => {
-                const participantIdentitiesArray = [];
-                const participantsArray = [];
-                let showcasedSummId = [];
-                let showcasedSummoner = [];
+                const getSummonerGameDetails = (participantsArray) => {
+                  return participantsArray.filter(
+                    (player) => player.summonerName == summName
+                  )[0];
+                };
 
                 //// SET LAST GAMES DATA
 
@@ -164,56 +108,40 @@ router.post("/summoner", (req, res, next) => {
 
                 //// END SET LAST GAMES DATA
 
-                resultArray.forEach((oneGame) => {
-                  participantIdentitiesArray.push(
-                    oneGame.participantIdentities
-                  );
-                  participantsArray.push(oneGame.participants);
-                });
-
-                participantIdentitiesArray.map((oneParticipant) => {
-                  oneParticipant.map((blah) => {
-                    if (blah.player.summonerName === summName) {
-                      showcasedSummId.push(blah.participantId);
-                    } else {
-                      return;
-                    }
-                  });
-                });
-
-                participantsArray.map((onePlayer, index) => {
-                  onePlayer.map((touche) => {
-                    if (touche.participantId === showcasedSummId[index]) {
-                      showcasedSummoner.push(Object.assign(touche));
-                    } else {
-                      return;
-                    }
-                  });
-                });
-
-                globalData.lastGamesStats = {};
-
-                globalData.lastGamesStats.victories = 0;
-                globalData.lastGamesStats.defeats = 0;
+                globalData.lastGamesStats = {
+                  victories: 0,
+                  defeats: 0,
+                };
 
                 //// GET SEARCHED PLAYER DETAILED GAME STATS
 
-                globalData.lastGames.forEach((oneGame, index) => {
-                  oneGame.summonerGameDetails = showcasedSummoner[index];
-
-                  oneGame.participants.summonerName = getDetailedTeams(
+                globalData.lastGames.forEach((oneGame) => {
+                  oneGame.participants.summonerName = functionTools.getDetailedTeams(
                     oneGame.participants,
-                    oneGame.participantIdentities,
-                    100
+                    oneGame.participantIdentities
+                  );
+
+                  oneGame.summonerGameDetails = getSummonerGameDetails(
+                    oneGame.participants
                   );
 
                   delete oneGame.participantIdentities;
 
-                  const blueTeam = splitTeams(oneGame.participants, 100);
-                  const redTeam = splitTeams(oneGame.participants, 200);
+                  const blueTeam = functionTools.splitTeams(
+                    oneGame.participants,
+                    100
+                  );
+                  const redTeam = functionTools.splitTeams(
+                    oneGame.participants,
+                    200
+                  );
 
-                  oneGame.teams[0].teamMembers = orderTeams(blueTeam);
-                  oneGame.teams[1].teamMembers = orderTeams(redTeam);
+                  oneGame.teams[0].teamMembers = functionTools.orderTeams(
+                    blueTeam
+                  );
+                  oneGame.teams[1].teamMembers = functionTools.orderTeams(
+                    redTeam
+                  );
 
                   //// END GET SEARCHED PLAYER DETAILED GAME STATS
 
