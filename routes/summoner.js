@@ -96,12 +96,6 @@ router.post("/summoner", (req, res, next) => {
 
             await Promise.all(matchIndex)
               .then((resultArray) => {
-                const getSummonerGameDetails = (participantsArray) => {
-                  return participantsArray.filter(
-                    (player) => player.summonerName == summName
-                  )[0];
-                };
-
                 //// SET LAST GAMES DATA
 
                 globalData.lastGames = resultArray;
@@ -121,8 +115,9 @@ router.post("/summoner", (req, res, next) => {
                     oneGame.participantIdentities
                   );
 
-                  oneGame.summonerGameDetails = getSummonerGameDetails(
-                    oneGame.participants
+                  oneGame.summonerGameDetails = functionTools.getSummonerGameDetails(
+                    oneGame.participants,
+                    summName
                   );
 
                   delete oneGame.participantIdentities;

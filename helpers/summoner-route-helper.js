@@ -54,9 +54,9 @@ module.exports = {
     });
     return filteredPositionsTeam;
   },
-  getSummonerGameDetails: (participantsArray) => {
+  getSummonerGameDetails: (participantsArray, summonerName) => {
     return participantsArray.filter(
-      (player) => player.summonerName == summName
+      (player) => player.summonerName == summonerName
     )[0];
   },
 };
