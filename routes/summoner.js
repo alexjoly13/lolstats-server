@@ -83,7 +83,7 @@ router.post("/summoner", (req, res, next) => {
         await kayn.Matchlist.by
           .accountID(summId)
           .query({
-            endIndex: 10,
+            endIndex: 6,
           })
           .then(async (matchlist) => {
             matchlist.matches.map((oneMatch) => {
