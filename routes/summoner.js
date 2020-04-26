@@ -21,7 +21,7 @@ const kayn = Kayn(riotApiKey)({
     shouldRetry: true,
     numberOfRetriesBeforeAbort: 3,
     delayBeforeRetry: 1000,
-    burst: false,
+    burst: true,
     shouldExitOn403: false,
   },
   cacheOptions: {
@@ -37,17 +37,16 @@ const kayn = Kayn(riotApiKey)({
 //// END GLOBAL KAYN SETTINGS
 
 router.post("/summoner", (req, res, next) => {
-  const summonerNameSearch = req.body;
+  const summonerNameSearch = Object.keys(req.body);
   const globalData = new Object();
   const championArray = Object.values(championData.data);
-  let trimmedSummonerName = Object.keys(summonerNameSearch);
   let summId;
   let summName;
   const matches = [];
 
   const infoRequest = async () => {
     await kayn.Summoner.by
-      .name(trimmedSummonerName)
+      .name(summonerNameSearch)
       .then(async (summoner) => {
         globalData.summoner = summoner;
         summName = summoner.name;
@@ -83,7 +82,7 @@ router.post("/summoner", (req, res, next) => {
         await kayn.Matchlist.by
           .accountID(summId)
           .query({
-            endIndex: 6,
+            endIndex: 10,
           })
           .then(async (matchlist) => {
             matchlist.matches.map((oneMatch) => {

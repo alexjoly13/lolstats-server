@@ -16,7 +16,7 @@ const kayn = Kayn(riotApiKey)({
     shouldRetry: true,
     numberOfRetriesBeforeAbort: 3,
     delayBeforeRetry: 1000,
-    burst: false,
+    burst: true,
     shouldExitOn403: false,
   },
   cacheOptions: {
