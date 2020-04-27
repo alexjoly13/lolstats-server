@@ -139,22 +139,6 @@ router.post("/summoner", (req, res, next) => {
 
                   //// END GET SEARCHED PLAYER DETAILED GAME STATS
 
-                  //// GET V/L RATIO
-
-                  oneGame.summonerGameDetails.stats.win == true
-                    ? (globalData.lastGamesStats.victories += 1)
-                    : (globalData.lastGamesStats.defeats += 1);
-
-                  globalData.lastGamesStats.winrate =
-                    Math.floor(
-                      (globalData.lastGamesStats.victories /
-                        (globalData.lastGamesStats.victories +
-                          globalData.lastGamesStats.defeats)) *
-                        100
-                    ) + "%";
-
-                  //// END V/L RATIO
-
                   //// GET PLAYERS CHAMPION NAME
 
                   championArray.forEach((oneChampion) => {
