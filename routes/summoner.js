@@ -66,19 +66,6 @@ router.post("/summoner", (req, res, next) => {
 
         //// END GET PLAYERS RANK
 
-        // await kayn.Matchlist.by
-        //   .accountID(summId)
-        //   .query({
-        //     season: 13,
-        //     queue: [420],
-        //   })
-        //   .then((gamesList) => {
-        //     console.log(gamesList);
-        //   })
-        //   .catch((err) => next(err));
-
-        /////////////////
-
         await kayn.Matchlist.by
           .accountID(summId)
           .query({
@@ -100,11 +87,6 @@ router.post("/summoner", (req, res, next) => {
                 globalData.lastGames = resultArray;
 
                 //// END SET LAST GAMES DATA
-
-                globalData.lastGamesStats = {
-                  victories: 0,
-                  defeats: 0,
-                };
 
                 //// GET SEARCHED PLAYER DETAILED GAME STATS
 
