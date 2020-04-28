@@ -40,8 +40,7 @@ router.post("/summoner", (req, res, next) => {
   const summonerNameSearch = Object.keys(req.body);
   const globalData = new Object();
   const championArray = Object.values(championData.data);
-  let summId;
-  let summName;
+  let summId, summName, otherId;
   const matches = [];
 
   const infoRequest = async () => {
