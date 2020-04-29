@@ -33,7 +33,6 @@ router.get("/esport", (req, res, next) => {
             eSportData.matchList = matchArray;
           })
           .catch((err) => next(err));
-        console.log(eSportData);
         res.json(eSportData);
       })
       .catch((err) => next(err));
