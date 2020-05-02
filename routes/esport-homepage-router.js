@@ -20,7 +20,7 @@ router.get("/esport", (req, res, next) => {
       .then(async () => {
         const upcomingMatchesIndex = leagueIds.map((oneQuery) => {
           return axios.get(
-            `https://api.pandascore.co/leagues/${oneQuery}/matches/upcoming?token=${apiKey}`
+            `https://api.pandascore.co/leagues/${oneQuery}/matches?token=${apiKey}`
           );
         });
 
