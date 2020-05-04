@@ -5,9 +5,9 @@ const axios = require("axios");
 router.get("/esport", (req, res, next) => {
   const apiKey = process.env.PANDASCORE_API_TOKEN;
 
-  const leagueIds = [293, 294, 4197, 4198];
+  const leagueIds = [293, 294, 4197, 4198, 4139];
 
-  const url = `https://api.pandascore.co/leagues?filter[id]=4197,4198,294,293&token=${apiKey}`;
+  const url = `https://api.pandascore.co/leagues?filter[id]=4197,4198,4139,294,293&token=${apiKey}`;
 
   const eSportData = new Object();
 
@@ -15,6 +15,7 @@ router.get("/esport", (req, res, next) => {
     await axios
       .get(url)
       .then(async (leagueList) => {
+        console.log(leagueList);
         eSportData.leaguesList = leagueList.data;
       })
       .then(async () => {
