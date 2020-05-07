@@ -4,6 +4,6 @@ COPY package*.json /lolstats/server/
 RUN npm install
 COPY . /lolstats/server
 
-EXPOSE 1337
+EXPOSE 5000
 
 CMD ["npm", "run", "dev"]
