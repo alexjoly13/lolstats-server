@@ -15,7 +15,7 @@ router.get("/esport", (req, res, next) => {
     await axios
       .get(url)
       .then(async (leagueList) => {
-        console.log(leagueList);
+        // console.log(leagueList);
         eSportData.leaguesList = leagueList.data;
       })
       .then(async () => {
