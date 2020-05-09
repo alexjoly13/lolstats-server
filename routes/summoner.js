@@ -36,7 +36,7 @@ const kayn = Kayn(riotApiKey)({
 
 //// END GLOBAL KAYN SETTINGS
 
-router.post("/summoner", (req, res, next) => {
+router.post("/summoner", (req, res) => {
   const summonerNameSearch = Object.keys(req.body);
   const globalData = new Object();
   const championArray = Object.values(championData.data);
